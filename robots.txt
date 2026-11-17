@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lp.ouzecv.com.br/sitemap.xml
