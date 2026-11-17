@@ -904,7 +904,6 @@ html.modal-aberto,html.modal-aberto body{overflow:hidden}
             <label>O que você procura?
               <select required name="interesse" toolparamdescription="Tipo de serviço desejado"><option value="">Selecione uma opção</option><option>Fachada</option><option>Revestimento em ACM</option><option>Letra-caixa</option><option>Luminoso</option><option>Totem / sinalização</option><option>Projeto para múltiplas unidades</option><option>Projeto especial</option><option>Outro</option></select>
             </label>
-            <label>Conte brevemente o que você precisa <span class="opcional">(opcional)</span><textarea name="mensagem" toolparamdescription="Detalhes opcionais: espaço, prazo, número de unidades" rows="4" maxlength="1500" placeholder="Fale sobre o espaço, prazo, número de unidades ou qualquer detalhe importante."></textarea></label>
             <button class="btn btn-primary btn-lg btn-full" type="submit">Solicitar orçamento <span>↗</span></button>
             <small>Seus dados são usados apenas para a OUZE responder sobre o seu projeto.</small>
           </form>
@@ -1229,7 +1228,7 @@ html.modal-aberto,html.modal-aberto body{overflow:hidden}
         whatsapp: d,
         cidade: f.cidade.value.trim(),
         interesse: f.interesse.value,
-        mensagem: f.mensagem.value.trim(),
+        mensagem: '',
         utm_source: o.utm_source || '', utm_medium: o.utm_medium || '', utm_campaign: o.utm_campaign || '',
         utm_content: o.utm_content || '', utm_term: o.utm_term || '',
         gclid: o.gclid || '', gbraid: o.gbraid || '', wbraid: o.wbraid || '', fbclid: o.fbclid || '',
