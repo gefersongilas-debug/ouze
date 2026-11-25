@@ -904,6 +904,9 @@ html.modal-aberto,html.modal-aberto body{overflow:hidden}
             <label>O que você procura?
               <select required name="interesse" toolparamdescription="Tipo de serviço desejado"><option value="">Selecione uma opção</option><option>Fachada</option><option>Revestimento em ACM</option><option>Letra-caixa</option><option>Luminoso</option><option>Totem / sinalização</option><option>Projeto para múltiplas unidades</option><option>Projeto especial</option><option>Outro</option></select>
             </label>
+            <label>Faixa de investimento prevista <span class="opcional">(nossos projetos partem de R$ 15 mil)</span>
+              <select required name="investimento" toolparamdescription="Faixa de investimento prevista para o projeto"><option value="">Selecione uma opção</option><option>Até R$ 15 mil</option><option>R$ 15 a 30 mil</option><option>R$ 30 a 50 mil</option><option>Acima de R$ 50 mil</option></select>
+            </label>
             <button class="btn btn-primary btn-lg btn-full" type="submit">Solicitar orçamento <span>↗</span></button>
             <small>Seus dados são usados apenas para a OUZE responder sobre o seu projeto.</small>
           </form>
@@ -1219,7 +1222,7 @@ html.modal-aberto,html.modal-aberto body{overflow:hidden}
       const responda = t => { if (responder) { responder(t); responder = null; } };
       const d = checarTel();
       if (!telValido(d)) tel.setCustomValidity(MSG_TEL);
-      if (!form.reportValidity()) { responda('Pedido não enviado: preencha nome, empresa, WhatsApp com DDD, cidade e o tipo de serviço.'); return; }
+      if (!form.reportValidity()) { responda('Pedido não enviado: preencha nome, empresa, WhatsApp com DDD, cidade, tipo de serviço e faixa de investimento.'); return; }
       const f = form.elements;
       const o = origemVisita();
       const corpo = {
@@ -1229,6 +1232,7 @@ html.modal-aberto,html.modal-aberto body{overflow:hidden}
         cidade: f.cidade.value.trim(),
         interesse: f.interesse.value,
         mensagem: '',
+        investimento: f.investimento.value,
         utm_source: o.utm_source || '', utm_medium: o.utm_medium || '', utm_campaign: o.utm_campaign || '',
         utm_content: o.utm_content || '', utm_term: o.utm_term || '',
         gclid: o.gclid || '', gbraid: o.gbraid || '', wbraid: o.wbraid || '', fbclid: o.fbclid || '',
